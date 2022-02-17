@@ -8,15 +8,15 @@ resolucao = [400,600]
 tela = pygame.display.set_mode(resolucao)
 pygame.display.set_caption("Flappy Bird")
 
-#DeclaraÁ„o(cria) de texto
+#Declara√ß√£o(cria) de texto
 fonte = pygame.font.Font("freesansbold.ttf", 32)
 texto = fonte.render("0", True, [0,255,0])
 
-#DeclaraÁ„o(cria) imagem
+#Declara√ß√£o(cria) imagem
 fundo = pygame.image.load("./Fundos/Fundo1.png")
 fundo = pygame.transform.scale(fundo, (400, 600))
 
-#Criando classe de p·ssaro
+#Criando classe de p√°ssaro
 class Passaro:
     x = 170
     y = 250
@@ -35,7 +35,7 @@ class Passaro:
         self.Cair()
 
     def Desenhar(self,tela):
-        tela.blit(self.imagem,[self.x,self.y]) #Desenha o p·ssaro
+        tela.blit(self.imagem,[self.x,self.y]) #Desenha o p√°ssaro
 
     def Cair(self):
         self.velocidade += self.aceleracao
@@ -72,9 +72,9 @@ class Cano:
         self.Mover()
         
     def Reiniciar(self):
-        self.y = random.randrange(190, 460) #n˙mero aleatÛrio de 190 a 460
+        self.y = random.randrange(190, 460) #n√∫mero aleat√≥rio de 190 a 460
         self.canoBaixoY = self.y
-        self.canoCimaY = self.canoBaixoY-1690 #espaÁamento de 140 entre os canos
+        self.canoCimaY = self.canoBaixoY-1690 #espa√ßamento de 140 entre os canos
 
     def Mover(self):
         self.x -= self.velocidade
@@ -97,12 +97,12 @@ class Chao:
     def Desenhar(self, tela):
         tela.blit(self.imagem,[self.x,self.y])#posiciona o desenho na tela
     
-def main(): #FunÁ„o onde o jogo inteiro ir·° rodar
+def main(): #Fun√ß√£o onde o jogo inteiro ir√°¬° rodar
     relogio = pygame.time.Clock()
     loop = True
     
-    passaro = Passaro()#Instancia pass·ro
-    chao = Chao() #Instancia ch„o
+    passaro = Passaro()#Instancia pass√°ro
+    chao = Chao() #Instancia ch√£o
     cano1 = Cano(430) #Insatan
     cano2 = Cano(735)
     

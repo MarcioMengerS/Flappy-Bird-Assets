@@ -9,17 +9,17 @@ tela = pygame.display.set_mode(resolucao)
 #Modifica o nome na barra do aplicativo
 pygame.display.set_caption("Flappy Bird")
 
-#Declara (Cria) uma superfÌcie com tamanho de x,y
+#Declara (Cria) uma superf√≠cie com tamanho de x,y
 #superficie = pygame.Surface([100,400])
 
-#DeclaraÁ„o(criaÁ„o) do ret‚ngulo
+#Declara√ß√£o(cria√ß√£o) do ret√¢ngulo
 #rect = pygame.Rect(20,20,35,45) #(x,y,largura,altura)
 
-#DeclaraÁ„o (criaÁ„o) de texto
+#Declara√ß√£o (cria√ß√£o) de texto
 fonte = pygame.font.Font("freesansbold.ttf", 32)
 texto = fonte.render("0", True, [0,255,0])#texto, borda suave, cor
 
-#DeclaraÁ„o (criaÁ„o) de Imagem de fundo
+#Declara√ß√£o (cria√ß√£o) de Imagem de fundo
 fundo = pygame.image.load("./Fundos/Fundo1.png")
 fundo = pygame.transform.scale(fundo,(400,600))#Redimensionamento da imagem
 
@@ -35,7 +35,7 @@ canoBaixo = pygame.transform.scale(canoBaixo,(100,1550))
 chao = pygame.image.load("./Objetos/Choes/chao1.png")
 chao = pygame.transform.scale(chao,(400,90))
 
-#Criando classe de p·ssaro
+#Criando classe de p√°ssaro
 class Passaro:
     x = 170
     y = 250
@@ -58,7 +58,7 @@ class Passaro:
 
     def Cair(self):
         self.velocidade += self.aceleracao # Aumenta a velocidade de queda do passaro
-        self.y += self.velocidade #Alterar a posi„o do passaro com base na velocidade 
+        self.y += self.velocidade #Alterar a posi√£o do passaro com base na velocidade 
 
     def Voar(self):
         self.y -= self.pulo #passar salta
@@ -74,17 +74,17 @@ print(cano.x,cano.y)
         
 #Pintando Tela
 #tela.fill([0,100,220]) # principal AZUL
-#superficie.fill([0,255,0]) #superfÌcie VERDE
+#superficie.fill([0,255,0]) #superf√≠cie VERDE
 
 
-#Imprimir ret‚ngulo em cima da superficie verde
+#Imprimir ret√¢ngulo em cima da superficie verde
 #pygame.draw.rect(superficie,[255,0,0],rect)
 
 #Imprimir na tela principal
-#tela.blit(superficie,[300,200])#superficie verde na posiÁ„o x,y
+#tela.blit(superficie,[300,200])#superficie verde na posi√ß√£o x,y
 #tela.blit(fundo,[0,-85])
-#tela.blit(texto, [0,0])#texto na posiÁ„o x,y
-#tela.blit(passaro, [170,250])#imagem n posiÁ„o x,y
+#tela.blit(texto, [0,0])#texto na posi√ß√£o x,y
+#tela.blit(passaro, [170,250])#imagem n posi√ß√£o x,y
 #tela.blit(canoBaixo, [300,310])
 #tela.blit(canoCima, [300,-1380])
 #tela.blit(chao,[0,510])
@@ -92,7 +92,7 @@ print(cano.x,cano.y)
 #atualiza a tela
 #pygame.display.update()
 
-#FunÁ„o onde o jogo inteiro ir· rodar
+#Fun√ß√£o onde o jogo inteiro ir√° rodar
 def main():
     relogio = pygame.time.Clock() #Cria um console de frame rate
     loop = True
@@ -103,17 +103,17 @@ def main():
     
     #Criar loop infinito
     while loop:
-        posX -=4 #Atualiza posiÁ„o canoCima em pixel
-        #posY +=5 #Atualiza posiÁ„o passaro
+        posX -=4 #Atualiza posi√ß√£o canoCima em pixel
+        #posY +=5 #Atualiza posi√ß√£o passaro
         
-        tela.blit(fundo,[0,-85])# Desenha fundo posiÁ„o x,y
+        tela.blit(fundo,[0,-85])# Desenha fundo posi√ß√£o x,y
         passaro.Atualizar(tela)
         #tela.blit(passaro,[170,posY])#Desenha passaro
         tela.blit(canoBaixo,[posX,310])#Desenha cano em baixo
         tela.blit(canoCima,[posX,-1380])#Desenha cano em cima
-        tela.blit(chao,[0,510])#Desenha ch„o
+        tela.blit(chao,[0,510])#Desenha ch√£o
         tela.blit(texto,[200,0])#Desenha texto
-        relogio.tick(30)#Define a taxa de atualizaÁ„o da tela(framerate)
+        relogio.tick(30)#Define a taxa de atualiza√ß√£o da tela(framerate)
         pygame.display.update()#Atualiza a tela
         
         #percorra todos eventos que ocorrem no jogo
@@ -126,7 +126,7 @@ def main():
             if event.type == pygame.KEYDOWN:#Verifica teclado pressionado
                 if event.key == pygame.K_UP:#Verifica tecla para cima pressionada
                     passaro.Voar()
-                    #posY -=80 # Atualiza posiÁ„o do p·ssaro conforme salto
+                    #posY -=80 # Atualiza posi√ß√£o do p√°ssaro conforme salto
 
             if event.type == pygame.MOUSEBUTTONDOWN:#Verifica mouse pressionado
                 passaro.Voar()
